@@ -24,4 +24,18 @@ function generateRandomColor() {
     return color
 }
 
-generatePaltte();
+
+function updatePaletteDisplay() {
+    const colorBoxes = document.querySelectorAll(".color-box");
+
+    colorBoxes.forEach((box, index) => {
+        const color = colors[index];
+        const colorDiv = box.querySelector(".color");
+        const hexValue = box.querySelector(".hex-value");
+
+        colorDiv.style.backgroundColor = color;
+        hexValue.textContent = color;
+    })
+}
+
+// generatePaltte();
